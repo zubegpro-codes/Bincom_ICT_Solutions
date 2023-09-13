@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% block content %}
+<main class="">
+
+
+	<div class="container shadow my-4">
+		<div class="row">
+			<div class="color_list shadow col-md-4 mx-3">
+				<section class=" mx-2 my-3 ">
+					<h5>List of Colors:</h5>
+	
+					{% for eachitem in freq_color %}
+		
+						<div class="p-3 shadow-sm my-1">
+							<span> <b>{{eachitem.0}} </b> 
+								<small>frequency 
+									<i class="badge text-bg-warning">(
+										{{eachitem.1}})</i></small></span> </div>
+					{% endfor %}
+				</section>
+			</div>
+			
+			<div class=" col-md-6 mx-3 ">
+				<section class=" p-5 shadow mx-2 my-3 ">
+					<h5>List of mean Colors:</h5>
+	
+					{% for mean_color in mean_colors %}
+						<div style="color: #9427d8;">{{mean_color}}</div>
+					{% endfor %}
+				</section>
+	
+				<section class="p-5  shadow mx-2 my-3">
+					<h5>List of Mode Colors:</h5>
+	
+					{% for mod_color in mode_color %}
+						<div>{{mod_color}}</div>
+					{% endfor %}
+				</section>
+	
+				<section class="p-5  shadow mx-2 my-3">
+					<h5>The median Color:</h5>
+	
+					{% for midcolor in midColor %}
+						<div>{{midcolor}}</div>
+					{% endfor %}
+				</section>
+	
+				<section class="p-5  shadow mx-2 my-3">
+					<h5>The variance:</h5>
+
+						<div>{{variance}}</div>
+	
+				</section>
+	
+				<section class="p-5  shadow mx-2 my-3">
+					<h5>The Probability that a choosen color is red:</h5>
+						<div>{{Probability_of_red}}</div>
+	
+				</section>
+	
+				<section class="p-5  shadow mx-2 my-3">
+					<h5>The sum of the first 50 Fibonacci numbers is:</h5>
+						<div>{{total_sum}}</div>
+				</section>
+	
+				<section class="p-5  shadow mx-2 my-3">
+					<h5>4 digits number of 0s and 1s and convert the generated number to base 10:</h5>
+						<div>four digit binary {{random_binary}} converted to decimal {{decimal_number}}</div>
+				</section>
+			</div>
+
+			
+		</div>
+	</div>
+
+</main>
+
+
+{% endblock %}

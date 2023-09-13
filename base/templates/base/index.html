@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+{% block content %}
+<main class="container-fluid">
+	
+	<div class="container">
+		<h2>Python Basic Developer Test</h2>
+		<div>
+			<h4>Background:</h4>
+			<p>You have been provided with a web page showing the colors of dresses put on by Bincom staffs for the week. We are planning to produce Tshirts for staffs and we have issues deciding the colors to be used. We want to make our decision based on the analysis of the data presented in the web page.
+			Kindly go through the web page and write a python program that answers the questions below:
+			</p>
+		</div>
+
+		<div>
+			<h4>Requirements:</h4>
+				<ul>
+					<li>You may use python2 or python3</li>
+					<li>You may use any IDE of your choice</li>
+		   			<li>You may use regular expression</li>
+				</ul>
+		</div>
+
+		<div>
+			<h4>Key Features:</h4>
+			<ul>
+				<li>Which color of shirt is the mean color?</li>
+				<li>Which color is mostly worn throughout the week?</li>
+				<li>Which color is the median?</li>
+				<li>BONUS Get the variance of the colors</li>
+				<li>BONUS if a colour is chosen at random, what is the probability that the color is red?</li>
+				<li>Save the colours and their frequencies in postgresql database</li>
+				<li>BONUS write a recursive searching algorithm to search for a number entered by user in a list of numbers.</li>
+				<li>Write a program that generates random 4 digits number of 0s and 1s and convert the generated number to base 10.</li>
+				<li>Write a program to sum the first 50 fibonacci sequence.</li>
+			</ul>
+		</div>
+
+		<div>
+			<h4>Hints:</h4>
+			<p>Bonus Questions are not Required but are recommended.
+			We are Testing your Basic Programming Ability.
+			You may browse any website of your choice to get code snippets and tutorials if necessary.
+			</p>
+		</div>
+	</div>
+	<div class="container ">
+		<h3>TABLE SHOWING COLOURS OF DRESS BY WORKERS AT BINCOM ICT FOR THE WEEK</h3>
+		<table>
+	
+			<thead>
+				<th>DAY</th><th>COLOURS</th>
+			</thead>
+			<tbody>
+			{%for eachdata in data_cont%}
+			<tr>
+				<td>{{eachdata.days}}</td>
+				<td>{{eachdata.colorInputs}}</td>
+			</tr>
+			{%endfor%}
+	
+			</tbody>
+		</table>
+	
+		<p>Examine the sequence below very well, you will discover that for every 1s that appear 3 times, 
+			the output will be one, otherwise the output will be 0.</p>
+		<p>0101101011101011011101101000111 <span style="color:orange;">Input</span></p>
+		<p>0000000000100000000100000000001 <span style="color:orange;">Output</span></p>
+	
+	</div>
+	<div class="container">
+		Click the button to see my Solution to the given problem
+		<div class="my-3">
+			<a href="{% url 'answer' %}" class="chkans btn btn-success">Check my Answer</a>
+		</div>
+	</div>
+
+</main>
+
+
+{% endblock %}
